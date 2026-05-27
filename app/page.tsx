@@ -236,10 +236,22 @@ function ServiceCard({
   title,
   text,
 }: {
-  icon: React.ReactElement;
+  icon: React.ReactElement<{ className?: string }>;
   title: string;
   text: string;
 }) {
+  return (
+    <Card className="rounded-3xl shadow-sm border-slate-200 bg-white">
+      <CardContent className="p-6">
+        <div className="h-11 w-11 rounded-2xl bg-slate-100 flex items-center justify-center mb-5">
+          {React.cloneElement(icon, { className: "h-5 w-5" })}
+        </div>
+        <h3 className="text-xl font-semibold mb-3">{title}</h3>
+        <p className="text-slate-600 leading-relaxed">{text}</p>
+      </CardContent>
+    </Card>
+  );
+}
 
 function EngagementStep({
   number,
@@ -250,3 +262,15 @@ function EngagementStep({
   title: string;
   text: string;
 }) {
+  return (
+    <div className="flex gap-4">
+      <div className="text-sm font-semibold text-slate-400 w-10 shrink-0">
+        {number}
+      </div>
+      <div>
+        <h4 className="font-semibold text-slate-900 mb-1">{title}</h4>
+        <p className="text-slate-600 leading-relaxed">{text}</p>
+      </div>
+    </div>
+  );
+}
