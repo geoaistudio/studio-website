@@ -2,67 +2,22 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle, Globe2, Layers, Workflow, GraduationCap, Mail, ShieldCheck } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle,
+  Globe2,
+  Layers,
+  Workflow,
+  GraduationCap,
+  Mail,
+  ShieldCheck,
+  Github,
+} from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-// DEPLOYMENT GUIDE
-// ================================
-// This is a React + Tailwind component intended for a Next.js project.
-//
-// Recommended setup:
-// 1. Install Node.js: https://nodejs.org
-// 2. Create a GitHub repository
-// 3. Create a Next.js app:
-//    npx create-next-app@latest geoai-studio
-//
-// During setup:
-// - Use TypeScript? -> No
-// - Use Tailwind CSS? -> Yes
-// - Use src directory? -> Yes
-// - Use App Router? -> Yes
-// - Use import alias? -> Yes
-//
-// 4. Open project:
-//    cd geoai-studio
-//
-// 5. Install dependencies:
-//    npm install framer-motion lucide-react
-//
-// 6. Install shadcn/ui:
-//    npx shadcn@latest init
-//
-// 7. Add components:
-//    npx shadcn@latest add card button
-//
-// 8. Replace contents of:
-//    src/app/page.js
-// with this file.
-//
-// 9. Run locally:
-//    npm run dev
-//
-// 10. Push to GitHub:
-//     git init
-//     git add .
-//     git commit -m "Initial website"
-//     git branch -M main
-//     git remote add origin YOUR_GITHUB_REPO_URL
-//     git push -u origin main
-//
-// 11. Deploy using Vercel:
-//     - Create account at https://vercel.com
-//     - Import GitHub repository
-//     - Click Deploy
-//     - Connect your domain
-//
-// Suggested next edits:
-// - Replace generic text with your actual bio
-// - Add your email/contact form
-// - Add LinkedIn link
-// - Add 1–2 case studies
-// - Add professional headshot if desired
-// ================================
+const contactEmail = "info.geoaistudio@gmail.com";
+const githubUrl = "https://github.com/geoaistudio";
 
 export default function GeoAIStudioWebsite() {
   return (
@@ -75,21 +30,28 @@ export default function GeoAIStudioWebsite() {
             transition={{ duration: 0.6 }}
           >
             <p className="text-sm uppercase tracking-[0.25em] text-slate-300 mb-5">
-              Independent GeoAI Studio
+              GeoAI Studio
             </p>
             <h1 className="text-4xl md:text-6xl font-semibold leading-tight mb-6">
-              Turning advanced geospatial AI research into robust operational workflows.
+              Exploring robust geospatial AI workflows for environmental and Earth observation applications.
             </h1>
-            <p className="text-lg md:text-xl text-slate-300 leading-relaxed mb-8">
-              I help research teams, environmental organisations, and Earth observation companies design, validate, and operationalise scientifically sound GeoAI and spatial machine learning workflows.
+            <p className="text-lg md:text-xl text-slate-300 leading-relaxed mb-6">
+              An independent GeoAI initiative by <span className="text-white font-medium">Mahdi Khodadadzadeh</span>, focused on research-to-practice translation, spatial machine learning, Earth observation, and scientifically grounded geospatial workflows.
+            </p>
+            <p className="text-base md:text-lg text-slate-400 leading-relaxed mb-8">
+              The studio is an evolving professional space for methodology, technical exploration, selected collaborations, and knowledge exchange around operational GeoAI.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="rounded-2xl px-6 py-6 text-base bg-white text-slate-950 hover:bg-slate-200">
-                Discuss a project <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button variant="outline" className="rounded-2xl px-6 py-6 text-base border-slate-500 text-white hover:bg-slate-800">
-                View services
-              </Button>
+              <a href={`mailto:${contactEmail}`}>
+                <Button className="rounded-2xl px-6 py-6 text-base bg-white text-slate-950 hover:bg-slate-200">
+                  Contact me <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </a>
+              <a href="#about">
+                <Button variant="outline" className="rounded-2xl px-6 py-6 text-base border-slate-500 text-white hover:bg-slate-800">
+                  About the studio
+                </Button>
+              </a>
             </div>
           </motion.div>
 
@@ -101,10 +63,10 @@ export default function GeoAIStudioWebsite() {
           >
             <div className="space-y-4">
               {[
-                "Research prototype",
-                "Geospatial data workflow",
-                "Spatial validation & benchmarking",
-                "Operational GeoAI system",
+                "Advanced geospatial AI methods",
+                "Scientific and operational workflows",
+                "Spatial validation and benchmarking",
+                "Research-to-practice translation",
               ].map((item, index) => (
                 <div key={item} className="flex items-center gap-4 bg-white/10 rounded-2xl p-4">
                   <div className="h-9 w-9 rounded-full bg-white text-slate-950 flex items-center justify-center font-semibold">
@@ -118,54 +80,76 @@ export default function GeoAIStudioWebsite() {
         </div>
       </section>
 
-      <section className="px-6 py-16 md:px-12 lg:px-24">
+      <section id="about" className="px-6 py-16 md:px-12 lg:px-24">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-10">
+          <div className="lg:col-span-1">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4">About</h2>
+            <p className="text-slate-600 leading-relaxed">
+              GeoAI Studio is an independent professional initiative owned and developed by Mahdi Khodadadzadeh.
+            </p>
+          </div>
+          <div className="lg:col-span-2 space-y-5 text-lg text-slate-600 leading-relaxed">
+            <p>
+              I am a researcher and educator working at the intersection of GeoAI, geospatial machine learning, Earth observation, and environmental data science.
+            </p>
+            <p>
+              My background combines electrical engineering, signal and image processing, machine learning, hyperspectral remote sensing, and applied geospatial analytics. Over the years, I have worked on topics including hyperspectral mineral mapping, spatial machine learning, environmental modelling, Earth observation workflows, and AI applications for ecological and climate-related systems.
+            </p>
+            <p>
+              This studio is a space to explore how advanced geospatial AI methods can move beyond prototypes toward more robust, reproducible, and operational workflows, while keeping scientific rigor, spatial validation, and domain awareness at the centre.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-16 md:px-12 lg:px-24 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-3xl mb-12">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">What the studio does</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Focus areas</h2>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Many GeoAI initiatives fail not because the models are weak, but because the workflow is not scientifically robust, reproducible, or ready for operational use. The studio focuses on the difficult transition from promising research to reliable practice.
+              The studio is currently evolving through research, technical exploration, selected collaborations, and knowledge-exchange activities around operational GeoAI and spatial machine learning.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             <ServiceCard
               icon={<Workflow />}
-              title="Research-to-Workflow Translation"
-              text="Convert academic methods, notebooks, and prototypes into structured, reusable, and deployable geospatial ML workflows."
+              title="Research-to-Practice Translation"
+              text="Exploring how academic methods, prototypes, and notebooks can become clearer, reusable, and more operational geospatial workflows."
             />
             <ServiceCard
               icon={<ShieldCheck />}
               title="Spatial ML Validation"
-              text="Audit model evaluation strategies, identify leakage, design spatial cross-validation, and build defensible benchmarks."
+              text="Thinking critically about leakage, spatial cross-validation, benchmarking, uncertainty, and scientifically defensible model evaluation."
             />
             <ServiceCard
               icon={<Globe2 />}
               title="Earth Observation AI"
-              text="Design ML pipelines for satellite, hyperspectral, environmental, ecological, and spatio-temporal datasets."
+              text="Working across satellite, hyperspectral, environmental, ecological, and spatio-temporal datasets with attention to real-world constraints."
             />
             <ServiceCard
               icon={<GraduationCap />}
-              title="Expert Training"
-              text="Deliver high-end workshops and technical training on GeoAI, spatial ML, validation, and operational Earth observation workflows."
+              title="Knowledge Exchange"
+              text="Developing ideas for workshops, technical discussions, and learning material on GeoAI, spatial ML, and operational Earth observation workflows."
             />
           </div>
         </div>
       </section>
 
-      <section className="px-6 py-16 md:px-12 lg:px-24 bg-white">
+      <section className="px-6 py-16 md:px-12 lg:px-24">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-start">
           <div>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-5">Who this is for</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-5">Why this space</h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
-              The studio is designed for organisations that already work with geospatial data, Earth observation, environmental models, or scientific AI prototypes — but need deeper methodological confidence and operational structure.
+              Many GeoAI initiatives sit between promising research and reliable practice. The challenge is often not only the model, but the full workflow: data assumptions, spatial bias, validation design, reproducibility, and operational context.
             </p>
             <ul className="space-y-3 text-slate-700">
               {[
-                "Research institutes moving methods beyond publications",
-                "Earth observation and climate-tech companies",
-                "Environmental and biodiversity organisations",
-                "Consultancies needing robust spatial ML workflows",
-                "Academic-industry consortia developing applied GeoAI systems",
+                "Bridging advanced methods and practical geospatial workflows",
+                "Making spatial ML evaluation more robust and transparent",
+                "Connecting Earth observation, environmental data science, and operational thinking",
+                "Exploring responsible and scientifically grounded uses of GeoAI",
+                "Creating a professional home for future collaborations and technical exchange",
               ].map((item) => (
                 <li key={item} className="flex gap-3">
                   <CheckCircle className="h-5 w-5 mt-0.5 shrink-0" />
@@ -178,18 +162,18 @@ export default function GeoAIStudioWebsite() {
           <Card className="rounded-3xl shadow-sm border-slate-200">
             <CardContent className="p-8">
               <Layers className="h-10 w-10 mb-5" />
-              <h3 className="text-2xl font-semibold mb-4">Typical engagement</h3>
+              <h3 className="text-2xl font-semibold mb-4">Current orientation</h3>
               <div className="space-y-5 text-slate-700">
-                <EngagementStep number="01" title="Technical diagnosis" text="Review data, modelling assumptions, validation strategy, and operational constraints." />
-                <EngagementStep number="02" title="Workflow redesign" text="Translate the method into a robust, reproducible, and scientifically defensible process." />
-                <EngagementStep number="03" title="Implementation support" text="Support prototype development, benchmarking, documentation, and knowledge transfer." />
+                <EngagementStep number="01" title="Explore" text="Clarify methodological questions, technical challenges, and possible directions for robust GeoAI workflows." />
+                <EngagementStep number="02" title="Translate" text="Think through how research ideas, prototypes, and experimental pipelines can become more structured and reusable." />
+                <EngagementStep number="03" title="Exchange" text="Build conversations, collaborations, and learning material around spatial ML, Earth observation, and environmental AI." />
               </div>
             </CardContent>
           </Card>
         </div>
       </section>
 
-      <section className="px-6 py-16 md:px-12 lg:px-24">
+      <section className="px-6 py-16 md:px-12 lg:px-24 bg-white">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-8">
           <div className="lg:col-span-1">
             <h2 className="text-3xl font-semibold mb-4">Core expertise</h2>
@@ -208,7 +192,7 @@ export default function GeoAIStudioWebsite() {
               "Data fusion and feature engineering",
               "Scientific workflow reproducibility",
             ].map((item) => (
-              <div key={item} className="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
+              <div key={item} className="bg-slate-50 rounded-2xl p-5 shadow-sm border border-slate-200">
                 {item}
               </div>
             ))}
@@ -218,13 +202,25 @@ export default function GeoAIStudioWebsite() {
 
       <section className="px-6 py-16 md:px-12 lg:px-24 bg-slate-950 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-5">Interested in making a GeoAI workflow more robust?</h2>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-5">Contact</h2>
           <p className="text-lg text-slate-300 leading-relaxed mb-8">
-            I am available for selected advisory, workflow review, research translation, and training engagements.
+            For research discussions, collaborations, workshops, technical conversations, or general inquiries, please get in touch.
           </p>
-          <Button className="rounded-2xl px-7 py-6 text-base bg-white text-slate-950 hover:bg-slate-200">
-            <Mail className="mr-2 h-4 w-4" /> Contact me
-          </Button>
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+            <a href={`mailto:${contactEmail}`}>
+              <Button className="rounded-2xl px-7 py-6 text-base bg-white text-slate-950 hover:bg-slate-200">
+                <Mail className="mr-2 h-4 w-4" /> {contactEmail}
+              </Button>
+            </a>
+            <a href={githubUrl} target="_blank" rel="noreferrer">
+              <Button variant="outline" className="rounded-2xl px-7 py-6 text-base border-slate-500 text-white hover:bg-slate-800">
+                <Github className="mr-2 h-4 w-4" /> GitHub
+              </Button>
+            </a>
+          </div>
+          <p className="text-sm text-slate-500">
+            © {new Date().getFullYear()} GeoAI Studio — Independent initiative by Mahdi Khodadadzadeh
+          </p>
         </div>
       </section>
     </main>
