@@ -147,6 +147,328 @@ export default function GeoAIStudioWebsite() {
       <section className="px-6 py-16 md:px-12 lg:px-24 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-3xl mb-12">
+            {/* <p className="text-sm uppercase tracking-[0.25em] text-slate-500 mb-4">
+              Selected Work
+            </p> */}
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4">
+              Portfolio
+            </h2>
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Selected work connected to the studio&apos;s focus areas.
+              {/* : geospatial data and
+              tools, specialized GeoAI, research-to-practice translation, and knowledge
+              exchange. */}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card className="rounded-3xl shadow-sm border-slate-200 bg-slate-50">
+              <CardContent className="p-7">
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {[
+                    "Geospatial Data & Tools",
+                    "Plant Phenology",
+                    "Reproducible Workflows",
+                    "Model Comparison",
+                  ].map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs uppercase tracking-wide bg-white border border-slate-200 rounded-full px-3 py-1 text-slate-600"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <h3 className="text-2xl font-semibold mb-4">
+                  Reproducible Workflows for GeoAI
+                </h3>
+
+                <div className="space-y-4 text-slate-600 leading-relaxed">
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">Context</h4>
+                    <p>
+                      Many GeoAI applications depend on harmonizing heterogeneous data sources,
+                      modelling approaches, and evaluation workflows. In this case, plant
+                      phenological modelling provides the example, bringing together
+                      observational networks, environmental datasets, process-based models,
+                      and machine learning approaches within a reproducible workflow.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">
+                      Core challenge
+                    </h4>
+                    <p>
+                      The challenge is not only to improve prediction accuracy, but to
+                      create consistent data preparation, modelling, and evaluation
+                      workflows. Without shared workflow structures, comparisons between
+                      modelling approaches remain difficult to reproduce and interpret.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">
+                      Direction
+                    </h4>
+                    <p>
+                      This case explores unified phenological modelling workflows that
+                      integrate phenological observations, meteorological data, reusable
+                      recipe-based data preparation, process-based models, and machine
+                      learning formulations for classification and regression.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">
+                      Why it matters
+                    </h4>
+                    <p>
+                      Reproducible workflow components, curated datasets, and comparable
+                      modelling pipelines help make phenological modelling more transparent,
+                      reusable, and extensible across species, regions, environmental
+                      variables, and Earth observation products.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="rounded-3xl shadow-sm border-slate-200 bg-slate-50">
+              <CardContent className="p-7">
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {[
+                    "Specialized GeoAI",
+                    "Spatial ML",
+                    "Model Evaluation",
+                    "Benchmarking",
+                  ].map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs uppercase tracking-wide bg-white border border-slate-200 rounded-full px-3 py-1 text-slate-600"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <h3 className="text-2xl font-semibold mb-4">
+                  Rethinking Model Evaluation in GeoAI
+                </h3>
+
+                <div className="space-y-4 text-slate-600 leading-relaxed">
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">Context</h4>
+                    <p>
+                      Geospatial AI models are often evaluated using conventional random
+                      train-test splits or standard cross-validation procedures. In
+                      spatially structured data, these strategies can produce overly
+                      optimistic results because nearby observations may share similar
+                      environmental, spectral, or contextual information.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">
+                      Core challenge
+                    </h4>
+                    <p>
+                      The central challenge is spatial leakage: models may appear to
+                      generalize well while partly relying on spatial autocorrelation,
+                      sampling design, or hidden similarity between training and test
+                      locations. This makes validation design a domain-specific modelling
+                      problem, not just a technical evaluation step.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">
+                      Direction
+                    </h4>
+                    <p>
+                      This case explores domain-aware validation strategies that better
+                      reflect intended deployment contexts, including spatial clustering,
+                      geographic-environmental blocking, and validation designs aligned 
+                      with the target deployment task for specialized GeoAI workflows.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">
+                      Why it matters
+                    </h4>
+                    <p>
+                      Reliable spatial validation is essential for scientific credibility
+                      and operational trust. Across geospatial applications, poor validation can lead to
+                      misleading performance estimates, weak generalization, and
+                      unreliable decisions when models are transferred to new areas,
+                      time periods, or operational contexts.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="rounded-3xl shadow-sm border-slate-200 bg-slate-50">
+              <CardContent className="p-7">
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {[
+                    "Research-to-Practice",
+                    "Hyperspectral Imaging",
+                    "Mineral Mapping",
+                    "Operational Geospatial Mapping",
+                  ].map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs uppercase tracking-wide bg-white border border-slate-200 rounded-full px-3 py-1 text-slate-600"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <h3 className="text-2xl font-semibold mb-4">
+                  Upscaling Local Knowledge for Operational Geospatial Mapping
+                </h3>
+
+                <div className="space-y-4 text-slate-600 leading-relaxed">
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">Context</h4>
+                    <p>
+                      Many geospatial mapping problems require transferring detailed local
+                      reference knowledge to broader spatial coverage. In this case, the
+                      local knowledge comes from high-resolution SEM-MLA mineralogical
+                      analysis of selected drill-core regions, while drill-core hyperspectral
+                      imaging provides a rapid, non-invasive way to extend mineralogical
+                      mapping across larger parts of the core.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">
+                      Core challenge
+                    </h4>
+                    <p>
+                      The challenge is how to transfer detailed mineral abundance
+                      information from limited laboratory-grade reference data to broader
+                      hyperspectral imagery. Standard unmixing methods often depend on
+                      representative pure spectral signatures, but drill-core pixels are
+                      highly mixed and may not contain reliable pure endmembers.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">
+                      Direction
+                    </h4>
+                    <p>
+                      This case explores a supervised GeoAI strategy for transferring
+                      local mineralogical reference knowledge into broader hyperspectral
+                      mapping. SEM-MLA-derived mineral abundances are linked to
+                      corresponding hyperspectral spectra, and the learned model is then
+                      used within an operational workflow to estimate mineral abundances
+                      across the full drill-core image.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">
+                      Why it matters
+                    </h4>
+                    <p>
+                      This approach illustrates research-to-practice translation in
+                      geoscience: connecting high-resolution laboratory analysis with
+                      operational hyperspectral workflows for scalable, quantitative, and
+                      reproducible mineral mapping and raw materials exploration.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="rounded-3xl shadow-sm border-slate-200 bg-slate-50">
+              <CardContent className="p-7">
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {[
+                    "Knowledge Exchange",
+                    "Advanced Training",
+                    "Community Building",
+                    "Research Agenda",
+                  ].map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs uppercase tracking-wide bg-white border border-slate-200 rounded-full px-3 py-1 text-slate-600"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <h3 className="text-2xl font-semibold mb-4">
+                  Community Building & Research Agenda Formation
+                </h3>
+
+                <div className="space-y-4 text-slate-600 leading-relaxed">
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">Context</h4>
+                    <p>
+                      Interdisciplinary GeoAI topics often require alignment across diverse data
+                      sources, modelling traditions, scientific communities, and application
+                      domains. In this case, plant phenological modelling provides the example,
+                      spanning observational networks, environmental data, process-based models,
+                      machine learning, remote sensing, ecology, climate science, and biodiversity
+                      research.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">
+                      Core challenge
+                    </h4>
+                    <p>
+                      The challenge is not only technical model development, but creating
+                      shared language, comparable workflows, benchmark frameworks, and
+                      common research priorities across disciplines. Without this
+                      alignment, methodological differences can limit comparison,
+                      synthesis, and cumulative progress.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">
+                      Direction
+                    </h4>
+                    <p>
+                      This case reflects the organization of an interdisciplinary workshop
+                      on FAIR phenological modelling, bringing together researchers from
+                      different countries, disciplines, and modelling
+                      traditions to establish common objectives and shape future research
+                      directions.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">
+                      Why it matters
+                    </h4>
+                    <p>
+                      Community building and research agenda formation can help emerging
+                      GeoAI and environmental modelling fields move from fragmented
+                      efforts toward shared benchmarks, reusable workflows, advanced
+                      learning material, and stronger interdisciplinary collaboration.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* <section className="px-6 py-16 md:px-12 lg:px-24 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-3xl mb-12">
             <p className="text-sm uppercase tracking-[0.25em] text-slate-500 mb-4">
               Methodological Case Studies
             </p>
@@ -458,7 +780,7 @@ export default function GeoAIStudioWebsite() {
             </Card>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* <section className="px-6 py-16 md:px-12 lg:px-24 bg-white">
         <div className="max-w-6xl mx-auto">
