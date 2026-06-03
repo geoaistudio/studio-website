@@ -23,7 +23,7 @@ export default function GeoAIStudioWebsite() {
               GeoAI Studio
             </p>
             <h1 className="text-4xl md:text-6xl font-semibold leading-tight mb-6">
-              Robust GeoAI workflows for environmental and Earth observation applications
+              Closing the reliability gap in GeoAI
             </h1>
             <p className="text-lg md:text-xl text-slate-300 leading-relaxed mb-6">
               An independent GeoAI initiative by{" "}
@@ -33,7 +33,7 @@ export default function GeoAIStudioWebsite() {
               >
                 Mahdi Khodadadzadeh
                 </a>
-                , exploring spatial machine/deep learning, Earth observation, research-to-practice translation, and scientifically grounded geospatial workflows.
+                , focused on making GeoAI more scientifically reliable, reproducible, and operationally meaningful.
             </p>
             {/* <p className="text-base md:text-lg text-slate-400 leading-relaxed mb-8">
               The studio is an evolving professional space for methodology, technical exploration, selected collaborations, and knowledge exchange around operational GeoAI.
@@ -60,10 +60,10 @@ export default function GeoAIStudioWebsite() {
           >
             <div className="space-y-4">
               {[
-                "Geospatial data, tools, and benchmarking",
-                "Scientifically grounded GeoAI workflows",
-                "Research-to-practice translation",
-                "Knowledge exchange and advanced training",
+                "Geospatial Data & Tools",
+                "Specialized GeoAI",
+                "Research-to-Practice Translation",
+                "Knowledge Exchange & Advanced Training",
               ].map((item, index) => (
                 <div key={item} className="flex items-center gap-4 bg-white/10 rounded-2xl p-4">
                   <div className="h-9 w-9 rounded-full bg-white text-slate-950 flex items-center justify-center font-semibold">
